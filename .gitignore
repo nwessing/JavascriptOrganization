@@ -1,0 +1,19 @@
+#binaries
+bin/
+obj/
+
+#nuget packages
+packages/
+
+#node modules
+node_modules/
+
+#fakes
+FakesAssemblies/
+
+TestResults/
+*.coverage.html
+
+*.suo
+*.dbmdl
+*.user
