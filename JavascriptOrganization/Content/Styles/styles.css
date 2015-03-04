@@ -27,6 +27,10 @@ body {
     background: #FFFAFA;
 }
 
+.board-selector {
+    margin-bottom: 20px;
+}
+
 .task {
     -ms-word-wrap: break-word;
     word-wrap: break-word;

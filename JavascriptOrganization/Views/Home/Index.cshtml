@@ -7,7 +7,11 @@
 }
 
 @section Body {
-    <h2>Kanban Board</h2>
+<div class="board-selector">
+    <select data-bind="options: boards, optionsText: 'Name', optionsValue: 'Id', value: boardId"></select>
+    <button data-bind="click: newBoard">Create</button>
+</div>
+<div data-bind="with: kanbanBoard()">
     <div>
         <div class="third">
             <form data-bind="submit: addNewTask">
@@ -36,13 +40,14 @@
         <div class="third" data-bind="template: { name: 'BoardTemplate', data: completeBoard }">
         </div>
     </div>
+</div>
 }
 
 @section Scripts {
     <script>
         require(['ko', 'jquery', 'KanbanViewModel'], function (ko, $, KanbanViewModel) {
             $(function () {
-                var vm = new KanbanViewModel([], [], []);
+                var vm = new KanbanViewModel();
                 ko.applyBindings(vm);
             });
         });
@@ -51,7 +56,7 @@
     <script id="BoardTemplate" type="text/html">
         <h3 class="center"><span data-bind="text: name"></span> (<span data-bind="text: numTasks"></span>)</h3>
         <div class="board" data-bind="dropzone: addTask, foreach: tasks">
-            <div class="task" data-bind="draggable: { data: $data, onMove: $parent.removeTask }, text: title"> </div>
+            <div class="task" data-bind="draggable: { data: $data, onMove: $parent.removeTask }, text: Description"> </div>
         </div>
     </script>
 }

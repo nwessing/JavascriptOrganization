@@ -8,7 +8,7 @@
         @RenderSection("Body")
         <script type="text/javascript" src="@Url.Content("~/Scripts/node_modules/requirejs/require.js")"></script>
         <script type="text/javascript" src="@Url.Content("~/Scripts/init.js")"></script>
-        <script type="text/javascript" src="~/Scripts/ko.bindingHandlers.dragging.js"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/ko.bindingHandlers.dragging.js")"></script>
         @RenderSection("Scripts")
     </body>
 </html>
